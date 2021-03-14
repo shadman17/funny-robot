@@ -2,7 +2,7 @@ const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
 
 //Paasing Joke to VoiceRSS API
-function tellMe(joke){
+function tellMe(joke) {
     VoiceRSS.speech({
         key: '04bbf30e215d4e1198238244681f6a72',
         src: joke,
@@ -18,7 +18,7 @@ function tellMe(joke){
 //Get Jokes from Joke API
 async function getJokes() {
     let joke = '';
-    const apiURL = 'https://v2.jokeapi.dev/joke/Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist,explicit'
+    const apiURL = 'https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit'
     try {
         const response = await fetch(apiURL)
         const data = await response.json();
@@ -38,7 +38,7 @@ async function getJokes() {
 }
 
 //
-function toggleButton(){
+function toggleButton() {
     button.disabled = !button.disabled;
 }
 
